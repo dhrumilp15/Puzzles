@@ -9,7 +9,7 @@ def boardlength(pieces):
     
     nums = {i:sums.count(i) for i in sums if sums.count(i) > 1}
     if len(nums) > 1:
-        return sums[01]
+        return sums[0:]
     print(nums)
     return max(nums, key=lambda key: nums[key])
 
