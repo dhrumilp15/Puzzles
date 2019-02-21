@@ -36,4 +36,4 @@ if len(pages) == booksize:
     print("Y")
 else:
     print("N")
-print(shortpath(pagemap[1],0))
+print(shortpath([pagemap[1]],0))
