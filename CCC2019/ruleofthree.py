@@ -11,12 +11,12 @@ def getsplits(string, size):
         full.append(string[i: i + size])
     return full
 
-def createtree(nodes, pagemap):
+def createtree(nodes, nodemap):
     for node in nodes:
         for i in windowlens:
-            pagemap.update({i:Node()})
+            nodemap.update({i:Node()})
 
-def findpath(nodes, level):
+# def findpath(nodes, level):
                   
 
 subrules = {}

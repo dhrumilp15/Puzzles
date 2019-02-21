@@ -19,8 +19,4 @@ for i in allcodes:
                     print(kewlkid[0], end = " ")
         else:
             kewlkid += j
-        # print("kewlkid: ", end = " ")
-        # print(kewlkid)
-        # print("pos: ", end = " ")
-        # print(pos)
     print()
