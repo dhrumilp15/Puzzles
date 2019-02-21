@@ -1,3 +1,5 @@
+from collections import OrderedDict
+
 class Node:
     def __init__(self):
         self.content = ""
@@ -6,20 +8,18 @@ class Node:
         self.children = []
 
 def getsplits(string, size):
-    full = []
-    for i in range(len(string) - size + 1):
-        full.append(string[i: i + size])
-    return full
+    return [string[i: i + size] for i in range(len(string) - size + 1)]
 
 def createtree(nodes, nodemap):
     for node in nodes:
+        splits = []
+        rule = 0
         for i in windowlens:
-            nodemap.update({i:Node()})
+            splits.extend(getsplits(node.content,i))
+        for i in splits:
+            rulepos = 0
 
-# def findpath(nodes, level):
-                  
-
-subrules = {}
+subrules = OrderedDict()
 for i in range(3):
     rule = input().split(" ")
     subrules.update({rule[0] : rule[1]})
