@@ -1,6 +1,6 @@
 from math import gcd
 import sys
-# import os
+# # import os
 
 input = sys.stdin.readline
 
@@ -13,7 +13,6 @@ input = sys.stdin.readline
 #     return next(dataiter)
 
 cases = int(input().strip())
-
 # def find_prime(product):
 #     for casenum in range(2, ceil(sqrt(product)) + 1):
 #         if product % casenum == 0:
@@ -22,15 +21,17 @@ cases = int(input().strip())
 def numtostr(plain):
     plain = sorted(list(set(plain)))
     alphabet = {}
-    letter = 65
+    letter = ord('A')
     for text in plain:
         alphabet.update({text : chr(letter)})
         letter += 1
     return alphabet
 
 for case in range(1, cases + 1):
-    largest, allnum = map(int, input().strip().split())
+    largest, allnum = list(map(int, input().strip().split()))
+    # print(largest, allnum)
     crypted = list(map(int, input().strip().split()))
+    # print(crypted)
     # print(len(crypted))
     plain = []
     common = 0
@@ -73,5 +74,7 @@ for case in range(1, cases + 1):
     message = ""
     for plaintext in plain:
         message += alphabet[plaintext]
-    print(f"Case #{case}: {message}")
-    
+    # message = "sicko Mode"
+    print("Case #{}: {}".format(case, message))
+# ABABBBACDEFGHIJKLMNOPQRSTUVWXYZ
+
