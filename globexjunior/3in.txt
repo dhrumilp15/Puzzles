@@ -1,0 +1,5 @@
+4 2
+Planet 100
+AnotherPlanet 50
+3rdPlanet 2
+4thPlanet 3
