@@ -1,5 +1,33 @@
+# Folders
 .idea/
 .vscode/
-puzzles/
+build/
+externals/
 
+# Python shenanigans
 testing_tool.py
+interactive_runner.py
+tempCodeRunnerfile.py
+
+# input files
+*.txt
+*.in
+
+# compiled files
+*.out
+
+#GitHub CMake gitignore
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+#helping hands
+*.pdf
