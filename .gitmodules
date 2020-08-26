@@ -1,0 +1,6 @@
+[submodule "binsearch/externals/sanitizers-cmake"]
+	path = binsearch/externals/sanitizers-cmake
+	url = git://github.com/arsenm/sanitizers-cmake.git
+[submodule "hackercup/round1/externals/sanitizers-cmake"]
+	path = hackercup/round1/externals/sanitizers-cmake
+	url = git://github.com/arsenm/sanitizers-cmake.git
