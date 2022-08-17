@@ -1,0 +1,1 @@
+Where I win and lose personal quarrels about whose is the better algorithm. (Naturally, I believe that my algorithms are better until I'm (figuratively please) beaten down to a pulp.)

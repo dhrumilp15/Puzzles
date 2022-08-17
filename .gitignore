@@ -2,7 +2,6 @@
 .idea/
 .vscode/
 build/
-externals/
 
 # Python shenanigans
 testing_tool.py

@@ -1,10 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//passed
+
 class Solution
 {
 public:
-    int dfs(const pair<int, int> &pos, const vector<vector<int>> &matrix)
+    int dfs(const pair<int, int> &pos, const vector<vector<int>> &matrix, const vector<vector<int>> &dplist)
     {
         vector<pair<int, int>> n = neighbours(pos, matrix);
 
@@ -12,12 +14,16 @@ public:
         {
             return 1;
         }
+        else if (dplist.at(pos.first).at(pos.second) != INT_MAX)
+        {
+            return dplist.at(pos.first).at(pos.second);
+        }
         else
         {
             int mmax = 0;
             for (int i = 0; i < (int)(n.size()); ++i)
             {
-                mmax = max(mmax, dfs(n.at(i), matrix));
+                mmax = max(mmax, dfs(n.at(i), matrix, dplist));
             }
 
             return 1 + mmax;
@@ -50,11 +56,14 @@ public:
         // Write your code here
         int big = 0;
 
+        vector<vector<int>> dplist(matrix.size(), vector<int>(matrix.at(0).size(), INT_MAX));
+
         for (int i = 0; i < matrix.size(); ++i)
         {
             for (int j = 0; j < matrix.at(i).size(); ++j)
             {
-                big = max(big, dfs(pair<int, int>(i, j), matrix));
+                dplist.at(i).at(j) = dfs(pair<int, int>(i, j), matrix, dplist);
+                big = max(big, dplist.at(i).at(j));
             }
         }
         return big;
@@ -64,7 +73,9 @@ public:
 int main()
 {
     Solution sol;
-    vector<vector<int>> matrix{{3, 9, 64}};
+    vector<vector<int>> matrix{{1, 3, 5},
+                               {0, 4, 6},
+                               {2, 2, 9}};
     int ans = sol.solve(matrix);
     printf("result: %d\n", ans);
     return ans;
